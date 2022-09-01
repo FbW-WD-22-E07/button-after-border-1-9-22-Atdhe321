@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+button {
+    width: 50%;
+    height: 10vh;
+    background-color: hsl(240, 100%, 22%);
+    border: none;
+    color: white;
+    font-size: 2em;
+    position: relative;
+}
+
+button::after {
+    content: "";
+    /* you need to change position:  */
+    position: absolute;
+    /* suggested bottom, left values` */
+    bottom: 0;
+    left: 0;
+    background-color: aqua;
+    height: 5px;
+    width: 100%;
+    /* make it hidden to start with:  */
+    transform: scale(0);
+    /* give it a transition: */
+    transition: transform 0.5s;
+}
+
+button.left-transf::after{
+    /* make transform start from left */
+    transform-origin: left;
+}
+button:hover::after {
+    transform: scale(1);
+}
