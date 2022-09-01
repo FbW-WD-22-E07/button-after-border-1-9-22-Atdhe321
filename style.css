@@ -18,31 +18,28 @@ button {
     border: none;
     color: white;
     font-size: 2em;
-    /* you need to change position */
+    position: relative;
 
 }
 
 button::after {
     content: "";
-    /* you need to change position:  */
-   
-    /* suggested bottom, left values` */
-    /* bottom: 0;
-    left: 0; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
     background-color: aqua;
     height: 5px;
     width: 100%;
-    /* make it hidden to start with:  */
-    
-    /* give it a transition: */
-    
+    transform: scale(0);
+    transition: transform 0.5s;
 }
 
 button.left-transf::after{
-    /* make transform start from left */
+    transform-origin: left;
     
 }
 
 button:hover::after {
     
+    transform: scale(1);
 }
